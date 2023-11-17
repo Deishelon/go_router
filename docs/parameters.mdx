@@ -41,14 +41,14 @@ void _tap() => context.go('/search?query=kitties');
 ```
 
 These parameters are optional and, if passed, will be provided in the
-`state.queryParams` property for every page matched in a stack of routes:
+`state.uri.queryParameters` property for every page matched in a stack of routes:
 
 ```dart
 GoRoute(
   path: '/search',
   builder: (context, state) {
-    // use state.queryParams to get search query from query parameter
-    final query = state.queryParams['query']; // may be null
+    // use state.uri.queryParameters to get search query from query parameter
+    final query = state.uri.queryParameters['query']; // may be null
     return SearchPage(query: query);
   },
 ),
